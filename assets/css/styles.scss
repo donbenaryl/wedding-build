@@ -937,10 +937,12 @@ mat-spinner {
         .question, .answer {
             border-radius: 5px;
             width: 70%;
+            font-size: 15px;
 
             .label {
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
                 background: #fff;
                 font-family: "Great Vibes", cursive;
                 position: relative;
@@ -956,7 +958,6 @@ mat-spinner {
         .question {
             color: #fff;
             background: $active-border-color;
-            font-size: 21px;
             .label {
                 color: $active-border-color;
             }
@@ -967,6 +968,7 @@ mat-spinner {
             margin-bottom: 15px;
             background:  $bg-secondary;
             float: right;
+            text-align: justify;
             .label {
                 color: #000;
             }
