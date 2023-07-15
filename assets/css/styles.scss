@@ -860,10 +860,14 @@ button {
   
 // GALLERY [END]
 
+app-root {
+    overflow-y: auto !important;
+}
+
 html, body {
-    // overflow-y: scroll !important;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-x pan-y;
+    // overflow-y: auto !important;
+    // -webkit-overflow-scrolling: touch !important;
+    // touch-action: pan-x pan-y;
     max-width: 100vw;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
