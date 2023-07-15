@@ -551,7 +551,7 @@ a {
     margin-bottom: -10px;
     padding-top: 45px;
     .home-details-inner {
-        padding-bottom: 65px;
+        padding-bottom: 25px;
         max-width: 1000px;
         margin: 0px auto;
     }
@@ -575,6 +575,27 @@ a {
         font-size: 19px;
         text-transform: uppercase;
         line-height: 25px;
+    }
+}
+
+.note {
+    mat-icon {
+        top: 4px;
+        position: relative;
+        font-size: 25px;
+    }
+    h5 {
+        text-transform: capitalize;
+    }
+    p {
+        padding: 0px 45px;
+        padding-bottom: 45px;
+        margin: 0px auto;
+        color: #000;
+        font-weight: 200;
+        margin-top: 10px;
+        text-align: justify;
+        text-align-last: center;
     }
 }
 // DETAILS [END]
