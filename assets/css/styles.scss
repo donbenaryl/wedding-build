@@ -520,6 +520,25 @@ a {
 }
 
 // RSVP [START]
+.m-t-n25 {
+    margin-top: -20px;
+}
+
+.emphasize {
+    font-weight: 500 !important;
+}
+
+.rsvp-label {
+    color: #000;
+}
+
+.rsvp-note {
+    font-size: 16px;
+    font-weight: 200;
+    color: #000;
+    text-align: justify;
+    text-align-last: center;
+}
 .rsvp-container {
     .white-box {
         width: 45%;
