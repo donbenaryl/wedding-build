@@ -76,6 +76,20 @@ $border-color: rgba(0, 0, 0, 0.15);
 
 $danger-color: $active-border-color;
 
+$success-color: #49d295;
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
 .text-shadow {
     text-shadow: -1px 1px 5px rgba(0,0,0,0.33);
 }
@@ -114,6 +128,10 @@ body {
     margin-top: 70px !important;
 }
 
+.mr-5 {
+    margin-right: 5px;
+}
+
 // HEADER [START]
 
 .header-with-background {
@@ -139,7 +157,7 @@ html:not([data-scroll='0']) {
     z-index: 1;
     font-weight: 400;
     display: flex;
-    width: 100%;
+    // width: 100%;
     right: 0px;
     left: 0px;
     top: 0px;
@@ -291,6 +309,12 @@ html:not([data-scroll='0']) {
     }
 }
 
+@media screen and (max-width: 544px) {
+    .rsvp-btn {
+        margin-bottom: 5px;
+    }
+}
+
 @media screen and (max-width: 500px) {
     div {
         h2, h3 {
@@ -325,10 +349,10 @@ html:not([data-scroll='0']) {
             width: 50px !important;
         }
         &::before {
-            left: -45px !important;
+            left: -55px !important;
         }
         &::after {
-            right: -55px !important;
+            right: -48px !important;
         }
     }
 
@@ -378,8 +402,20 @@ html:not([data-scroll='0']) {
     }
 }
 
+.text-capitalize {
+    text-transform: capitalize;
+}
+
 .text-center {
     text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-white {
+    color: #fff !important;
 }
 
 .text-danger {
@@ -389,6 +425,16 @@ html:not([data-scroll='0']) {
         display: block;
         font-weight: 300;
         color: $danger-color;
+    }
+}
+
+.text-success {
+    margin-top: 0px;
+
+    span {
+        display: block;
+        font-weight: 300;
+        color: $active-border-color;
     }
 }
 
@@ -476,6 +522,12 @@ a {
 .rsvp-container {
     .white-box {
         width: 45%;
+    }
+    .button-container {
+        text-align: right;
+    }
+    button {
+        width: 120px;
     }
     ul {
         margin-top: -31px;
@@ -655,6 +707,12 @@ button {
     td:last-child {
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
+      width: 250px;
+
+      mat-form-field {
+        width: 266px !important;
+        top: 3px;
+      }
     }
   }
 // TABLE [END]
@@ -672,35 +730,50 @@ button {
     height: 100vh;
     width: 100vw;
     position: fixed;
-    z-index: 2;
+    z-index: 2000;
     background:rgba(0, 0, 0, 0.90);
+
     .close-icon {
         right: 0px;
         position: fixed;
         padding: 5px;
         cursor: pointer;
+        z-index: 2;
     }
 
     .prev-icon, .next-icon {
         position: fixed;
-        top: 49%;
         cursor: pointer;
-        font-size: 35px;
-        height: 35px;
+        height: 100vh;
+        width: 50vw;
+        top: 0px;
+        display: flex;
+        align-items: center;
+
+        mat-icon {
+            font-size: 35px;
+        }
     }
 
     .prev-icon {
-        left: 5px;
+        left: 0px;
+        text-align: left;
     }
 
     .next-icon {
-        right: 10px;
+        right: 0px;
+        text-align: right;
+
+        mat-icon {
+            right: 10px;
+            position: fixed;
+        }
     }
 
-    .hidden {
-        // right: -250px;
-        transition: all 1s ease-in-out;
-    }
+    // .hidden {
+    //     // right: -250px;
+    //     transition: all 1s ease-in-out;
+    // }
 
     img {
         max-width: 100%;
@@ -712,17 +785,18 @@ button {
         position: fixed;
         right: 0;
         top: 0;
-        -o-object-fit: contain;
-        object-fit: contain;
-        -webkit-user-drag: none;
-        -khtml-user-drag: none;
-        -moz-user-drag: none;
-        -o-user-drag: none;
-        user-drag: none;
+
+        // -o-object-fit: contain;
+        // object-fit: contain;
+        // -webkit-user-drag: none;
+        // -khtml-user-drag: none;
+        // -moz-user-drag: none;
+        // -o-user-drag: none;
+        // user-drag: none;
         
-        opacity:1;
-        right: 0px;
-        transition: all 1s ease-in-out;
+        // opacity:1;
+        // right: 0px;
+        // transition: all 1s ease-in-out;
     }
 }
 .gallery-container {
@@ -786,9 +860,113 @@ button {
   
 // GALLERY [END]
 
-// html, body { height: 100%; }
-body {
+html, body {
+    // overflow-y: scroll !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+    max-width: 100vw;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    max-width: 100%;
 }
+
+
+// GUEST [START]
+.guest-container {
+    label {
+        color: #000;
+    }
+    h2 {
+        small {
+            font-size: 53px;
+        }
+    }
+}
+
+.copy-url {
+    margin-left: 10px;
+    color: #000;
+    border: solid 1px #e5e5e5;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn-export {
+    // border: solid 1px $success-color !important;
+    // color: $success-color !important;
+    background: $success-color !important;
+    color: #fff !important;
+}
+
+.disabled {
+    opacity: 0.6;
+}
+
+mat-spinner {
+    width: 15px !important;
+    height: 15px !important;
+    display: inline-block !important;
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+}
+// GUEST [END]
+
+
+// FAQ [START]
+.faq-container {
+    position: relative;
+    z-index: 0;
+    display: table;
+    width: 100%;
+    color: #000;
+
+    .faq-inner {
+        max-width: 750px;
+        margin: 0px auto;
+        padding: 0px 15px;
+
+        .faq-item {
+            display: table;
+            width: 100%;
+        }
+
+        .question, .answer {
+            border-radius: 5px;
+            width: 70%;
+
+            .label {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                background: #fff;
+                font-family: "Great Vibes", cursive;
+                position: relative;
+                top: -1.2px;
+                left: 1px;
+            }
+            span {
+                padding: 15px 20px;
+                display:inline-block;
+            }
+        }
+        
+        .question {
+            color: #fff;
+            background: $active-border-color;
+            font-size: 21px;
+            .label {
+                color: $active-border-color;
+            }
+        }
+    
+        .answer {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            background:  $bg-secondary;
+            float: right;
+            .label {
+                color: #000;
+            }
+        }
+    }
+}
+// FAQ [END]
