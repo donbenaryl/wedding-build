@@ -132,6 +132,10 @@ body {
     margin-right: 5px;
 }
 
+.hidden {
+    display: none !important;
+}
+
 // HEADER [START]
 
 .header-with-background {
@@ -245,31 +249,6 @@ html:not([data-scroll='0']) {
         fill: #fff;
     }
 
-    .wedding-of {
-        margin-top: 25px;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        color: #fff;
-        letter-spacing: 7px;
-        position: relative;
-
-        &::before, &::after {
-            position: absolute;
-            top: 50%;
-            content: '';
-            width: 130px;
-            height: 2px;
-            background: #fff;
-        }
-        &::before {
-            left: -150px;
-        }
-        &::after {
-            right: -140px;
-        }
-    }
-
     h1 {
         margin: 0px;
         font-family: "Great Vibes", cursive;
@@ -288,6 +267,31 @@ html:not([data-scroll='0']) {
         line-height: 1.5;
         // margin-top: -60px;
         margin-bottom: 60px;
+    }
+}
+
+.wedding-of {
+    margin-top: 25px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 7px;
+    position: relative;
+
+    &::before, &::after {
+        position: absolute;
+        top: 50%;
+        content: '';
+        width: 130px;
+        height: 2px;
+        background: #fff;
+    }
+    &::before {
+        left: -150px;
+    }
+    &::after {
+        right: -140px;
     }
 }
 
@@ -484,6 +488,11 @@ a {
     float: left;
 }
 
+.w-25 {
+    width: 25% !important;
+    float: left;
+}
+
 .w-33 {
     width: 33%;
 }
@@ -638,7 +647,7 @@ a {
 }
 
 .bg-white-inner {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 14px;
     border-radius: 14px;
     margin-bottom: 55px !important;
@@ -728,6 +737,40 @@ a {
         margin-top: 10px;
         text-align: justify;
         text-align-last: center;
+    }
+}
+
+.entourage {
+    * {
+        color: #000;
+    }
+    ul {
+        list-style: none;
+        li {
+            font-weight: 300;
+            &.title {
+                font-weight: 400;
+            }
+        }
+        
+    }
+    h4 {
+        color: $active-border-color;
+    }
+    h5 {
+        span {
+            @extend .wedding-of;
+            color: #000;
+            font-weight: 400;
+            font-size: 21px;
+
+            &::before, &::after {
+                background: #000 !important;
+            }
+        }
+    }
+    p {
+        margin-bottom: 0px;
     }
 }
 // DETAILS [END]
