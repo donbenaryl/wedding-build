@@ -1049,11 +1049,18 @@ button {
     position: relative;
     // padding-bottom: 56.25%; /* 16:9 */
     height: 0;
+    padding-bottom: calc(56.25% * 0.75);
     max-width: 1200px;
     margin: 0px auto;
     margin-bottom: 5px;
 
     
+}
+
+@media screen and (max-width: 544px) {
+    .video-container {
+        padding-bottom: 56.25%; /* 16:9 */
+    }
 }
 .video-container iframe {
     position: absolute;
