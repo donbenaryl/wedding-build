@@ -612,6 +612,8 @@ a {
     p {
         color: #000;
         font-weight: 300;
+        text-align: center;
+        line-height: 25px;
     }
 
     img {
@@ -630,6 +632,7 @@ a {
 .mat-mdc-dialog-surface {
     background: rgba(255, 255, 255, 0.9) !important;
     border-radius: 14px !important;
+    overflow: hidden !important;
 }
 // RSVP [END]
 
@@ -850,6 +853,9 @@ a {
 mat-form-field {
     mat-icon {
         cursor: pointer;
+    }
+    mat-error {
+        margin-left: -5px;
     }
 }
 
